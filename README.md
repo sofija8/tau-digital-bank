@@ -4,7 +4,7 @@ Digital Bank is a sample application that was developed for exploratory purposes
  
 ## Getting Started
 
-* Using either an Eclipse IDE or IntelliJ, import the source code as an Existing Maven Project.
+* Using either an Eclipse IDE or IntelliJ or VS Code, import the source code as an Existing Maven Project.
 
 ## Prerequisites
 
