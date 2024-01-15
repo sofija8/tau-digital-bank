@@ -1,0 +1,24 @@
+name: afternoon build at 16h
+
+on:
+  schedule:
+    - cron: '0 16 * * *'
+
+jobs:
+  afternoon_build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4.1.1
+
+      - name: Run Unit Tests
+        run: mvn test
+
+      - name: Build with Maven
+        run: mvn -DskipTests -B package --no-transfer-progress --file ./pom.xml
+
+      - name: Upload a Build Artifact
+        uses: actions/upload-artifact@v4.1.0
+        with: 
+          name: digibank.war
+          path: ./target/*digibank*.war
